@@ -1,16 +1,13 @@
 import requests
-import json
-
-from config import config
-
-
-def send_message(chat_id, text):
-    method = "sendMessage"
-    url = config.webhook_url(method)
-    data = {"chat_id": chat_id, "text": text}
-    requests.post(url, data=data)
+import yaml
+import random
 
 
-def write_json(data, filename='answer.json'):
-    with open(filename, 'w') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+def send_message(message):
+    data = {"message": message}
+    with open(r'security.yml') as file:
+        documents = yaml.full_load(file)
+        for keys, values in documents.items():
+            if keys == 'users':
+                i = random.randrange(0, len(values))
+                requests.post(values[i]['tg'], data=data)
