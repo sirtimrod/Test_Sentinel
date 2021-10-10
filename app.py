@@ -1,7 +1,6 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 
 from apps import router as main_router
-import methods
 
 
 def make_app() -> Flask:
