@@ -1,5 +1,13 @@
 # Test_Sentinel
 
+### Start from Docker
+```bash
+mkdir ~/Sentinel && cd ~/Sentinel
+git clone git@github.com:bebrainee/nfc.git sentinel
+docke build -t sentinel sentinel/
+docke run --rm --name flask-sentinel -p 5000:5000 sentinel
+```
+
 ### Prepare project virtual environment:
 ```bash
 # Create project directory
