@@ -7,14 +7,16 @@ git clone git@github.com:bebrainee/nfc.git sentinel
 mv sentinel/docker-compose.yaml .
 docker-compose up -d
 # Copy this URl to browser: http://localhost:5000/
+docker-compose down
 ```
 
 ### Start from Dockerfile
 ```bash
 mkdir ~/Sentinel && cd ~/Sentinel
 git clone git@github.com:bebrainee/nfc.git sentinel
-docke build -t sentinel sentinel/
-docke run --rm --name flask-sentinel -p 5000:5000 sentinel
+docker build -t sentinel sentinel/
+docker run --rm --name flask-sentinel -p 5000:5000 sentinel
+docker stop
 ```
 
 ### Prepare project virtual environment:
