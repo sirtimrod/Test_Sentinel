@@ -1,11 +1,7 @@
 FROM python:3.9
 
-COPY . app/
+WORKDIR /usr/src/app
 
-WORKDIR app/
+COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
-
-EXPOSE 5000
-
-CMD ["python3", "run_server.py"]

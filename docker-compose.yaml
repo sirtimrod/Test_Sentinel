@@ -2,7 +2,13 @@ version: "3"
 
 services:
   web_service:
-    build: ""
-    restart: always
+    build:
+      dockerfile: './Dockerfile'
+      context: .
+    command: python run_server.py
+    volumes:
+      - .:/usr/src/app
+    tty: true
+    restart: unless-stopped
     ports:
       - 5000:5000
