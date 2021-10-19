@@ -1,6 +1,15 @@
 # Test_Sentinel
 
-### Start from Docker
+### Start from Docker-compose
+```bash
+mkdir ~/Sentinel && cd ~/Sentinel
+git clone git@github.com:bebrainee/nfc.git sentinel
+mv sentinel/docker-compose.yaml .
+docker-compose up -d
+# Copy this URl to browser: http://localhost:5000/
+```
+
+### Start from Dockerfile
 ```bash
 mkdir ~/Sentinel && cd ~/Sentinel
 git clone git@github.com:bebrainee/nfc.git sentinel
